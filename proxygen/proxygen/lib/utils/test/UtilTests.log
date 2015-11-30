@@ -1,0 +1,87 @@
+[==========] Running 32 tests from 6 test cases.
+[----------] Global test environment set-up.
+[----------] 12 tests from OwnedGenericFilterTest
+[ RUN      ] OwnedGenericFilterTest.empty_chain
+[       OK ] OwnedGenericFilterTest.empty_chain (0 ms)
+[ RUN      ] OwnedGenericFilterTest.single_elem_chain
+[       OK ] OwnedGenericFilterTest.single_elem_chain (0 ms)
+[ RUN      ] OwnedGenericFilterTest.multi_elem_chain
+[       OK ] OwnedGenericFilterTest.multi_elem_chain (0 ms)
+[ RUN      ] OwnedGenericFilterTest.multi_elem_multi_add
+[       OK ] OwnedGenericFilterTest.multi_elem_multi_add (0 ms)
+[ RUN      ] OwnedGenericFilterTest.wants
+[       OK ] OwnedGenericFilterTest.wants (0 ms)
+[ RUN      ] OwnedGenericFilterTest.wants_multi_add
+[       OK ] OwnedGenericFilterTest.wants_multi_add (0 ms)
+[ RUN      ] OwnedGenericFilterTest.wants_multi_add_hard
+[       OK ] OwnedGenericFilterTest.wants_multi_add_hard (206 ms)
+[ RUN      ] OwnedGenericFilterTest.change_callback
+[       OK ] OwnedGenericFilterTest.change_callback (0 ms)
+[ RUN      ] OwnedGenericFilterTest.set_null_cb
+[       OK ] OwnedGenericFilterTest.set_null_cb (1 ms)
+[ RUN      ] OwnedGenericFilterTest.delete_chain
+[       OK ] OwnedGenericFilterTest.delete_chain (1 ms)
+[ RUN      ] OwnedGenericFilterTest.get_chain_end
+[       OK ] OwnedGenericFilterTest.get_chain_end (198 ms)
+[ RUN      ] OwnedGenericFilterTest.set_destination
+[       OK ] OwnedGenericFilterTest.set_destination (1 ms)
+[----------] 12 tests from OwnedGenericFilterTest (407 ms total)
+
+[----------] 3 tests from UnownedGenericFilterTest
+[ RUN      ] UnownedGenericFilterTest.all
+[       OK ] UnownedGenericFilterTest.all (215 ms)
+[ RUN      ] UnownedGenericFilterTest.delete_do
+[       OK ] UnownedGenericFilterTest.delete_do (0 ms)
+[ RUN      ] UnownedGenericFilterTest.delete_on
+[       OK ] UnownedGenericFilterTest.delete_on (1 ms)
+[----------] 3 tests from UnownedGenericFilterTest (216 ms total)
+
+[----------] 4 tests from HTTPTimeTests
+[ RUN      ] HTTPTimeTests.InvalidTimeTest
+[       OK ] HTTPTimeTests.InvalidTimeTest (0 ms)
+[ RUN      ] HTTPTimeTests.ValidTimeTest
+[       OK ] HTTPTimeTests.ValidTimeTest (0 ms)
+[ RUN      ] HTTPTimeTests.EqualTimeTest
+[       OK ] HTTPTimeTests.EqualTimeTest (0 ms)
+[ RUN      ] HTTPTimeTests.ReallyOldTimeTest
+[       OK ] HTTPTimeTests.ReallyOldTimeTest (0 ms)
+[----------] 4 tests from HTTPTimeTests (0 ms total)
+
+[----------] 8 tests from ParseURL
+[ RUN      ] ParseURL.HostNoBrackets
+[       OK ] ParseURL.HostNoBrackets (0 ms)
+[ RUN      ] ParseURL.FullyFormedURL
+[       OK ] ParseURL.FullyFormedURL (0 ms)
+[ RUN      ] ParseURL.NoScheme
+[       OK ] ParseURL.NoScheme (0 ms)
+[ RUN      ] ParseURL.NoSchemeIP
+[       OK ] ParseURL.NoSchemeIP (0 ms)
+[ RUN      ] ParseURL.PathOnly
+[       OK ] ParseURL.PathOnly (0 ms)
+[ RUN      ] ParseURL.QueryIsURL
+[       OK ] ParseURL.QueryIsURL (0 ms)
+[ RUN      ] ParseURL.InvalidURL
+[       OK ] ParseURL.InvalidURL (0 ms)
+[ RUN      ] ParseURL.IsHostIPAddress
+[       OK ] ParseURL.IsHostIPAddress (1 ms)
+[----------] 8 tests from ParseURL (1 ms total)
+
+[----------] 4 tests from Result
+[ RUN      ] Result.Copy
+[       OK ] Result.Copy (0 ms)
+[ RUN      ] Result.Move
+[       OK ] Result.Move (0 ms)
+[ RUN      ] Result.Assign
+[       OK ] Result.Assign (0 ms)
+[ RUN      ] Result.Emplace
+[       OK ] Result.Emplace (0 ms)
+[----------] 4 tests from Result (0 ms total)
+
+[----------] 1 test from UtilTest
+[ RUN      ] UtilTest.CaseInsensitiveEqual
+[       OK ] UtilTest.CaseInsensitiveEqual (0 ms)
+[----------] 1 test from UtilTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 32 tests from 6 test cases ran. (624 ms total)
+[  PASSED  ] 32 tests.

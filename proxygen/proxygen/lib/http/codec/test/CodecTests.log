@@ -1,0 +1,156 @@
+[==========] Running 55 tests from 5 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from DefaultFlowControl
+[ RUN      ] DefaultFlowControl.flow_control_construct
+
+[WARNING] gmock-1.7.0/gtest/src/gtest-death-test.cc:825:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] DefaultFlowControl.flow_control_construct (342 ms)
+[ RUN      ] DefaultFlowControl.send_update
+[       OK ] DefaultFlowControl.send_update (1 ms)
+[----------] 2 tests from DefaultFlowControl (343 ms total)
+
+[----------] 2 tests from BigWindow
+[ RUN      ] BigWindow.recv_too_much
+[       OK ] BigWindow.recv_too_much (5 ms)
+[ RUN      ] BigWindow.remote_increase
+[       OK ] BigWindow.remote_increase (0 ms)
+[----------] 2 tests from BigWindow (5 ms total)
+
+[----------] 3 tests from HTTPChecksTest
+[ RUN      ] HTTPChecksTest.send_trace_body_death
+
+[WARNING] gmock-1.7.0/gtest/src/gtest-death-test.cc:825:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] HTTPChecksTest.send_trace_body_death (135 ms)
+[ RUN      ] HTTPChecksTest.send_get_body
+[       OK ] HTTPChecksTest.send_get_body (0 ms)
+[ RUN      ] HTTPChecksTest.recv_trace_body
+[       OK ] HTTPChecksTest.recv_trace_body (0 ms)
+[----------] 3 tests from HTTPChecksTest (135 ms total)
+
+[----------] 43 tests from SPDYCodecTest
+[ RUN      ] SPDYCodecTest.JunkSPDY
+E1124 16:43:15.190467 18499 SPDYCodec.cpp:250] SYN_STREAM: invalid length 4 < 10
+[       OK ] SPDYCodecTest.JunkSPDY (0 ms)
+[ RUN      ] SPDYCodecTest.LongPing
+E1124 16:43:15.190799 18499 SPDYCodec.cpp:242] PING: invalid length 5 != 4
+[       OK ] SPDYCodecTest.LongPing (0 ms)
+[ RUN      ] SPDYCodecTest.BadType
+[       OK ] SPDYCodecTest.BadType (0 ms)
+[ RUN      ] SPDYCodecTest.SynStreamBoundaries
+[       OK ] SPDYCodecTest.SynStreamBoundaries (49 ms)
+[ RUN      ] SPDYCodecTest.SetSettings
+[       OK ] SPDYCodecTest.SetSettings (0 ms)
+[ RUN      ] SPDYCodecTest.FrameTooLarge
+E1124 16:43:15.240025 18499 SPDYCodec.cpp:307] excessive frame size length_=1050
+[       OK ] SPDYCodecTest.FrameTooLarge (0 ms)
+[ RUN      ] SPDYCodecTest.FrameUncompressedTooLarge
+E1124 16:43:15.240094 18499 GzipHeaderCodec.cpp:342] Decompressed headers too large
+[       OK ] SPDYCodecTest.FrameUncompressedTooLarge (0 ms)
+[ RUN      ] SPDYCodecTest.UnsupportedVersion
+E1124 16:43:15.240155 18499 SPDYCodec.cpp:250] SYN_STREAM: invalid length 4 < 10
+[       OK ] SPDYCodecTest.UnsupportedVersion (0 ms)
+[ RUN      ] SPDYCodecTest.UnsupportedFrameType
+[       OK ] SPDYCodecTest.UnsupportedFrameType (0 ms)
+[ RUN      ] SPDYCodecTest.DefaultMaxTransactions
+[       OK ] SPDYCodecTest.DefaultMaxTransactions (2 ms)
+[ RUN      ] SPDYCodecTest.NonDefaultMaxTransactions
+[       OK ] SPDYCodecTest.NonDefaultMaxTransactions (2 ms)
+[ RUN      ] SPDYCodecTest.EmptyHeaderValue
+[       OK ] SPDYCodecTest.EmptyHeaderValue (0 ms)
+[ RUN      ] SPDYCodecTest.SynStreamWrongVersion
+E1124 16:43:15.244933 18499 SPDYCodec.cpp:285] Invalid version=2
+[       OK ] SPDYCodecTest.SynStreamWrongVersion (0 ms)
+[ RUN      ] SPDYCodecTest.ShortSynReply
+[       OK ] SPDYCodecTest.ShortSynReply (1 ms)
+[ RUN      ] SPDYCodecTest.SupportsSessionFlowControl
+[       OK ] SPDYCodecTest.SupportsSessionFlowControl (0 ms)
+[ RUN      ] SPDYCodecTest.HeaderWithManyValues
+[       OK ] SPDYCodecTest.HeaderWithManyValues (1 ms)
+[ RUN      ] SPDYCodecTest.MultiplePaths
+[       OK ] SPDYCodecTest.MultiplePaths (0 ms)
+[ RUN      ] SPDYCodecTest.LargeFrameEncoding
+[       OK ] SPDYCodecTest.LargeFrameEncoding (1 ms)
+[ RUN      ] SPDYCodecTest.InvalidSettings
+[       OK ] SPDYCodecTest.InvalidSettings (0 ms)
+[ RUN      ] SPDYCodecTest.HeaderWithFin
+[       OK ] SPDYCodecTest.HeaderWithFin (0 ms)
+[ RUN      ] SPDYCodecTest.ServerPush
+[       OK ] SPDYCodecTest.ServerPush (0 ms)
+[ RUN      ] SPDYCodecTest.ServerPushWithStatus
+[       OK ] SPDYCodecTest.ServerPushWithStatus (0 ms)
+[ RUN      ] SPDYCodecTest.ServerPushHostMissing
+[       OK ] SPDYCodecTest.ServerPushHostMissing (0 ms)
+[ RUN      ] SPDYCodecTest.ServerPushInvalidId
+E1124 16:43:15.247364 18499 SPDYCodec.cpp:1224]  invalid syn stream stream_id=3 lastStreamID_=0 assocStreamID=1 direction=upstream
+[       OK ] SPDYCodecTest.ServerPushInvalidId (0 ms)
+[ RUN      ] SPDYCodecTest.ServerPushInvalidFlags
+[       OK ] SPDYCodecTest.ServerPushInvalidFlags (0 ms)
+[ RUN      ] SPDYCodecTest.ServerPushWithoutAssoc
+E1124 16:43:15.247462 18499 SPDYCodec.cpp:1224]  invalid syn stream stream_id=2 lastStreamID_=0 assocStreamID=0 direction=upstream
+[       OK ] SPDYCodecTest.ServerPushWithoutAssoc (0 ms)
+[ RUN      ] SPDYCodecTest.StatusReason
+[       OK ] SPDYCodecTest.StatusReason (0 ms)
+[ RUN      ] SPDYCodecTest.UpstreamPing
+[       OK ] SPDYCodecTest.UpstreamPing (0 ms)
+[ RUN      ] SPDYCodecTest.DownstreamPing
+[       OK ] SPDYCodecTest.DownstreamPing (0 ms)
+[ RUN      ] SPDYCodecTest.DateHeader
+[       OK ] SPDYCodecTest.DateHeader (0 ms)
+[ RUN      ] SPDYCodecTest.HeaderDoS
+E1124 16:43:15.248183 18499 GzipHeaderCodec.cpp:342] Decompressed headers too large
+[       OK ] SPDYCodecTest.HeaderDoS (1 ms)
+[ RUN      ] SPDYCodecTest.DoubleGoawayServer
+[       OK ] SPDYCodecTest.DoubleGoawayServer (0 ms)
+[ RUN      ] SPDYCodecTest.DoubleGoawayClient
+[       OK ] SPDYCodecTest.DoubleGoawayClient (0 ms)
+[ RUN      ] SPDYCodecTest.SingleGoawayClient
+[       OK ] SPDYCodecTest.SingleGoawayClient (0 ms)
+[ RUN      ] SPDYCodecTest.OddHeaderListTest
+E1124 16:43:15.248308 18499 GzipHeaderCodec.cpp:434] invalid header value
+[       OK ] SPDYCodecTest.OddHeaderListTest (0 ms)
+[ RUN      ] SPDYCodecTest.SendRstParsingFrame
+[       OK ] SPDYCodecTest.SendRstParsingFrame (0 ms)
+[ RUN      ] SPDYCodecTest.BadNumNameValues
+E1124 16:43:15.248533 18499 GzipHeaderCodec.cpp:425] bad encoding for nv=2: std::out_of_range: bad length=119 uncompressedLength=91
+E1124 16:43:15.248641 18499 GzipHeaderCodec.cpp:427] 00000000  00 00 00 05 00 00 00 05  3a 68 6f 73 74 00 00 00  |........:host...|
+00000010  0b 77 77 77 2e 66 6f 6f  2e 63 6f 6d 00 00 00 77  |.www.foo.com...w|
+00000020  3a 6d 65 74 68 6f 64 00  00 00 00 00 00 00 05 3a  |:method........:|
+00000030  70 61 74 68 00 13 00 14  68 74 74 39 73 3a 2f 2f  |path....htt9s://|
+00000040  77 77 77 2e 66 6f 6f 2e  63 6f 6d 2f 00 00 00 07  |www.foo.com/....|
+00000050  3a 73 63 68 65 6d 65 00  00 00 04 68 74 74 70 00  |:scheme....http.|
+00000060  00 00 08 3a 76 65 72 73  69 6f 6e 00 00 00 08 48  |...:version....H|
+00000070  54 54 50 2f 31 2e 31                              |TTP/1.1         |
+[       OK ] SPDYCodecTest.BadNumNameValues (0 ms)
+[ RUN      ] SPDYCodecTest.ShortSettings
+E1124 16:43:15.248700 18499 SPDYCodec.cpp:250] SETTINGS: invalid length 1 < 4
+[       OK ] SPDYCodecTest.ShortSettings (0 ms)
+[ RUN      ] SPDYCodecTest.SegmentedHeaderBlock
+[       OK ] SPDYCodecTest.SegmentedHeaderBlock (1 ms)
+[ RUN      ] SPDYCodecTest.ColonHeaders
+[       OK ] SPDYCodecTest.ColonHeaders (0 ms)
+[ RUN      ] SPDYCodecTest.EmptyHeaderName
+[       OK ] SPDYCodecTest.EmptyHeaderName (0 ms)
+[ RUN      ] SPDYCodecTest.StreamIdOverflow
+[       OK ] SPDYCodecTest.StreamIdOverflow (0 ms)
+[ RUN      ] SPDYCodecTest.BadNVBlock
+E1124 16:43:15.249908 18499 GzipHeaderCodec.cpp:425] bad encoding for nv=0: std::out_of_range: bad length=4294967295 uncompressedLength=4
+E1124 16:43:15.249938 18499 GzipHeaderCodec.cpp:427] 00000000  00 00 00 01 ff ff ff ff                           |........        |
+[       OK ] SPDYCodecTest.BadNVBlock (0 ms)
+[----------] 43 tests from SPDYCodecTest (59 ms total)
+
+[----------] 5 tests from HTTP1xCodecTest
+[ RUN      ] HTTP1xCodecTest.TestSimpleHeaders
+[       OK ] HTTP1xCodecTest.TestSimpleHeaders (0 ms)
+[ RUN      ] HTTP1xCodecTest.TestHeadRequestChunkedResponse
+[       OK ] HTTP1xCodecTest.TestHeadRequestChunkedResponse (0 ms)
+[ RUN      ] HTTP1xCodecTest.TestGetRequestChunkedResponse
+[       OK ] HTTP1xCodecTest.TestGetRequestChunkedResponse (0 ms)
+[ RUN      ] HTTP1xCodecTest.TestChunkedHeaders
+[       OK ] HTTP1xCodecTest.TestChunkedHeaders (0 ms)
+[ RUN      ] HTTP1xCodecTest.TestChunkedUpstream
+[       OK ] HTTP1xCodecTest.TestChunkedUpstream (0 ms)
+[----------] 5 tests from HTTP1xCodecTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 55 tests from 5 test cases ran. (543 ms total)
+[  PASSED  ] 55 tests.

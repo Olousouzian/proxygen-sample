@@ -1,0 +1,546 @@
+[==========] Running 167 tests from 29 test cases.
+[----------] Global test environment set-up.
+[----------] 6 tests from EgressStateMachineFixture
+[ RUN      ] EgressStateMachineFixture.BadEgressTransitions1
+E1124 16:53:03.397625 18831 StateMachine.h:32] Invalid transition tried: ChunkBodySent sendEOM
+[       OK ] EgressStateMachineFixture.BadEgressTransitions1 (0 ms)
+[ RUN      ] EgressStateMachineFixture.BadEgressTransitions2
+E1124 16:53:03.397775 18831 StateMachine.h:32] Invalid transition tried: Start sendBody
+[       OK ] EgressStateMachineFixture.BadEgressTransitions2 (0 ms)
+[ RUN      ] EgressStateMachineFixture.BadEgressTransitions3
+E1124 16:53:03.397805 18831 StateMachine.h:32] Invalid transition tried: EOMQueued sendEOM
+[       OK ] EgressStateMachineFixture.BadEgressTransitions3 (0 ms)
+[ RUN      ] EgressStateMachineFixture.BadEgressTransitions4
+E1124 16:53:03.397831 18831 StateMachine.h:32] Invalid transition tried: ChunkHeaderSent sendChunkTerminator
+[       OK ] EgressStateMachineFixture.BadEgressTransitions4 (0 ms)
+[ RUN      ] EgressStateMachineFixture.EgressChunkedTransitions
+[       OK ] EgressStateMachineFixture.EgressChunkedTransitions (0 ms)
+[ RUN      ] EgressStateMachineFixture.NormalEgressTransitions
+[       OK ] EgressStateMachineFixture.NormalEgressTransitions (0 ms)
+[----------] 6 tests from EgressStateMachineFixture (0 ms total)
+
+[----------] 7 tests from IngressStateMachineFixture
+[ RUN      ] IngressStateMachineFixture.BadIngressTransitions1
+E1124 16:53:03.397896 18831 StateMachine.h:32] Invalid transition tried: ChunkBodyReceived onEOM
+[       OK ] IngressStateMachineFixture.BadIngressTransitions1 (0 ms)
+[ RUN      ] IngressStateMachineFixture.BadIngressTransitions2
+E1124 16:53:03.397919 18831 StateMachine.h:32] Invalid transition tried: Start onBody
+[       OK ] IngressStateMachineFixture.BadIngressTransitions2 (0 ms)
+[ RUN      ] IngressStateMachineFixture.BadIngressTransitions3
+E1124 16:53:03.397944 18831 StateMachine.h:32] Invalid transition tried: EOMQueued onEOM
+[       OK ] IngressStateMachineFixture.BadIngressTransitions3 (0 ms)
+[ RUN      ] IngressStateMachineFixture.BadIngressTransitions4
+E1124 16:53:03.397970 18831 StateMachine.h:32] Invalid transition tried: ChunkHeaderReceived onChunkComplete
+[       OK ] IngressStateMachineFixture.BadIngressTransitions4 (1 ms)
+[ RUN      ] IngressStateMachineFixture.IngressChunkedTransitions
+[       OK ] IngressStateMachineFixture.IngressChunkedTransitions (0 ms)
+[ RUN      ] IngressStateMachineFixture.NormalIngressTransitions
+[       OK ] IngressStateMachineFixture.NormalIngressTransitions (0 ms)
+[ RUN      ] IngressStateMachineFixture.WeirdIngressTransitions
+[       OK ] IngressStateMachineFixture.WeirdIngressTransitions (0 ms)
+[----------] 7 tests from IngressStateMachineFixture (1 ms total)
+
+[----------] 8 tests from DownstreamTransactionTest
+[ RUN      ] DownstreamTransactionTest.simple_callback_forwarding
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyEgressBodyBuffered(0)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyEgressBodyBuffered(0)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyIngressBodyProcessed(100)
+Stack trace:
+[       OK ] DownstreamTransactionTest.simple_callback_forwarding (2 ms)
+[ RUN      ] DownstreamTransactionTest.regular_window_update
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyEgressBodyBuffered(0)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyEgressBodyBuffered(0)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyIngressBodyProcessed(220)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning default value.
+    Function call: isDraining()
+          Returns: false
+Stack trace:
+[       OK ] DownstreamTransactionTest.regular_window_update (0 ms)
+[ RUN      ] DownstreamTransactionTest.window_increase
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyEgressBodyBuffered(0)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyEgressBodyBuffered(0)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyIngressBodyProcessed(500)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning default value.
+    Function call: isDraining()
+          Returns: false
+Stack trace:
+[       OK ] DownstreamTransactionTest.window_increase (1 ms)
+[ RUN      ] DownstreamTransactionTest.window_decrease
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyEgressBodyBuffered(0)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyEgressBodyBuffered(0)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyIngressBodyProcessed(500)
+Stack trace:
+
+GMOCK WARNING:
+Uninteresting mock function call - returning default value.
+    Function call: isDraining()
+          Returns: false
+Stack trace:
+[       OK ] DownstreamTransactionTest.window_decrease (0 ms)
+[ RUN      ] DownstreamTransactionTest.parse_error_cbs
+[       OK ] DownstreamTransactionTest.parse_error_cbs (0 ms)
+[ RUN      ] DownstreamTransactionTest.detach_from_notify
+
+GMOCK WARNING:
+Uninteresting mock function call - returning directly.
+    Function call: notifyPendingEgress()
+Stack trace:
+[       OK ] DownstreamTransactionTest.detach_from_notify (0 ms)
+[ RUN      ] DownstreamTransactionTest.deferred_egress
+
+GMOCK WARNING:
+Uninteresting mock function call - returning default value.
+    Function call: sendBody(0x7ffcd4ef03c0, 16-byte object <08-37 04-74 5D-2B 00-00 80-95 05-74 5D-2B 00-00>, false)
+          Returns: 0
+Stack trace:
+[       OK ] DownstreamTransactionTest.deferred_egress (1 ms)
+[ RUN      ] DownstreamTransactionTest.internal_error
+[       OK ] DownstreamTransactionTest.internal_error (0 ms)
+[----------] 8 tests from DownstreamTransactionTest (4 ms total)
+
+[----------] 23 tests from HTTPDownstreamSessionTest
+[ RUN      ] HTTPDownstreamSessionTest.immediate_eof
+[       OK ] HTTPDownstreamSessionTest.immediate_eof (1 ms)
+[ RUN      ] HTTPDownstreamSessionTest.http_1_0_no_headers
+[       OK ] HTTPDownstreamSessionTest.http_1_0_no_headers (1 ms)
+[ RUN      ] HTTPDownstreamSessionTest.http_1_0_no_headers_eof
+[       OK ] HTTPDownstreamSessionTest.http_1_0_no_headers_eof (0 ms)
+[ RUN      ] HTTPDownstreamSessionTest.single_bytes
+[       OK ] HTTPDownstreamSessionTest.single_bytes (0 ms)
+[ RUN      ] HTTPDownstreamSessionTest.single_bytes_with_body
+[       OK ] HTTPDownstreamSessionTest.single_bytes_with_body (1 ms)
+[ RUN      ] HTTPDownstreamSessionTest.split_body
+[       OK ] HTTPDownstreamSessionTest.split_body (4 ms)
+[ RUN      ] HTTPDownstreamSessionTest.post_chunked
+[       OK ] HTTPDownstreamSessionTest.post_chunked (6 ms)
+[ RUN      ] HTTPDownstreamSessionTest.multi_message
+[       OK ] HTTPDownstreamSessionTest.multi_message (6 ms)
+[ RUN      ] HTTPDownstreamSessionTest.connect
+[       OK ] HTTPDownstreamSessionTest.connect (5 ms)
+[ RUN      ] HTTPDownstreamSessionTest.connect_rejected
+[       OK ] HTTPDownstreamSessionTest.connect_rejected (1 ms)
+[ RUN      ] HTTPDownstreamSessionTest.http_upgrade
+[       OK ] HTTPDownstreamSessionTest.http_upgrade (0 ms)
+[ RUN      ] HTTPDownstreamSessionTest.trailers
+[       OK ] HTTPDownstreamSessionTest.trailers (1 ms)
+[ RUN      ] HTTPDownstreamSessionTest.explicit_chunks
+[       OK ] HTTPDownstreamSessionTest.explicit_chunks (0 ms)
+[ RUN      ] HTTPDownstreamSessionTest.http_drain
+[       OK ] HTTPDownstreamSessionTest.http_drain (0 ms)
+[ RUN      ] HTTPDownstreamSessionTest.http_drain_long_running
+[       OK ] HTTPDownstreamSessionTest.http_drain_long_running (202 ms)
+[ RUN      ] HTTPDownstreamSessionTest.early_abort
+[       OK ] HTTPDownstreamSessionTest.early_abort (0 ms)
+[ RUN      ] HTTPDownstreamSessionTest.http_writes_draining_timeout
+[       OK ] HTTPDownstreamSessionTest.http_writes_draining_timeout (509 ms)
+[ RUN      ] HTTPDownstreamSessionTest.http_rate_limit_normal
+[       OK ] HTTPDownstreamSessionTest.http_rate_limit_normal (834 ms)
+[ RUN      ] HTTPDownstreamSessionTest.write_timeout
+[       OK ] HTTPDownstreamSessionTest.write_timeout (558 ms)
+[ RUN      ] HTTPDownstreamSessionTest.write_timeout_pipeline
+[       OK ] HTTPDownstreamSessionTest.write_timeout_pipeline (558 ms)
+[ RUN      ] HTTPDownstreamSessionTest.body_packetization
+[       OK ] HTTPDownstreamSessionTest.body_packetization (1 ms)
+[ RUN      ] HTTPDownstreamSessionTest.http_malformed_pkt1
+[       OK ] HTTPDownstreamSessionTest.http_malformed_pkt1 (0 ms)
+[ RUN      ] HTTPDownstreamSessionTest.big_explcit_chunk_write
+[       OK ] HTTPDownstreamSessionTest.big_explcit_chunk_write (100 ms)
+[----------] 23 tests from HTTPDownstreamSessionTest (2788 ms total)
+
+[----------] 2 tests from HTTPDownstreamTest
+[ RUN      ] HTTPDownstreamTest.parse_error_no_txn
+[       OK ] HTTPDownstreamTest.parse_error_no_txn (1 ms)
+[ RUN      ] HTTPDownstreamTest.byte_events_drained
+[       OK ] HTTPDownstreamTest.byte_events_drained (0 ms)
+[----------] 2 tests from HTTPDownstreamTest (1 ms total)
+
+[----------] 9 tests from SPDY3DownstreamSessionTest
+[ RUN      ] SPDY3DownstreamSessionTest.http_paused_buffered
+[       OK ] SPDY3DownstreamSessionTest.http_paused_buffered (80 ms)
+[ RUN      ] SPDY3DownstreamSessionTest.spdy_rate_limit_normal
+[       OK ] SPDY3DownstreamSessionTest.spdy_rate_limit_normal (833 ms)
+[ RUN      ] SPDY3DownstreamSessionTest.spdy_rate_limit_rst
+[       OK ] SPDY3DownstreamSessionTest.spdy_rate_limit_rst (60 ms)
+[ RUN      ] SPDY3DownstreamSessionTest.spdy_prio
+[       OK ] SPDY3DownstreamSessionTest.spdy_prio (10 ms)
+[ RUN      ] SPDY3DownstreamSessionTest.spdy_timeout
+[       OK ] SPDY3DownstreamSessionTest.spdy_timeout (622 ms)
+[ RUN      ] SPDY3DownstreamSessionTest.spdy_timeout_win
+[       OK ] SPDY3DownstreamSessionTest.spdy_timeout_win (503 ms)
+[ RUN      ] SPDY3DownstreamSessionTest.spdy_max_concurrent_streams
+[       OK ] SPDY3DownstreamSessionTest.spdy_max_concurrent_streams (30 ms)
+[ RUN      ] SPDY3DownstreamSessionTest.testEOFOnBlockedStream
+[       OK ] SPDY3DownstreamSessionTest.testEOFOnBlockedStream (11 ms)
+[ RUN      ] SPDY3DownstreamSessionTest.new_txn_egress_paused
+[       OK ] SPDY3DownstreamSessionTest.new_txn_egress_paused (31 ms)
+[----------] 9 tests from SPDY3DownstreamSessionTest (2182 ms total)
+
+[----------] 4 tests from ParallelCodecs/HTTPDownstreamTest/0, where TypeParam = SPDY3CodecPair
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/0.testWritesDraining
+E1124 16:53:08.373390 18831 GzipHeaderCodec.cpp:337] inflate failed with error=-3
+[       OK ] ParallelCodecs/HTTPDownstreamTest/0.testWritesDraining (0 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/0.testBodySizeLimit
+[       OK ] ParallelCodecs/HTTPDownstreamTest/0.testBodySizeLimit (1 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/0.testUniformPauseState
+[       OK ] ParallelCodecs/HTTPDownstreamTest/0.testUniformPauseState (102 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/0.testMaxTxns
+[       OK ] ParallelCodecs/HTTPDownstreamTest/0.testMaxTxns (15 ms)
+[----------] 4 tests from ParallelCodecs/HTTPDownstreamTest/0 (118 ms total)
+
+[----------] 4 tests from ParallelCodecs/HTTPDownstreamTest/1, where TypeParam = SPDY3_1CodecPair
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/1.testWritesDraining
+E1124 16:53:08.492087 18831 GzipHeaderCodec.cpp:337] inflate failed with error=-3
+[       OK ] ParallelCodecs/HTTPDownstreamTest/1.testWritesDraining (1 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/1.testBodySizeLimit
+[       OK ] ParallelCodecs/HTTPDownstreamTest/1.testBodySizeLimit (1 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/1.testUniformPauseState
+[       OK ] ParallelCodecs/HTTPDownstreamTest/1.testUniformPauseState (102 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/1.testMaxTxns
+[       OK ] ParallelCodecs/HTTPDownstreamTest/1.testMaxTxns (20 ms)
+[----------] 4 tests from ParallelCodecs/HTTPDownstreamTest/1 (124 ms total)
+
+[----------] 4 tests from ParallelCodecs/HTTPDownstreamTest/2, where TypeParam = HTTP2CodecPair
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/2.testWritesDraining
+E1124 16:53:08.616361 18831 HTTP2Codec.cpp:1081] Connection error with ingress=
+00000000  00 00 00 02 82 86 84 41  89 f1 e3 c2 f2 9c eb 90  |.......A........|
+00000010  f4 ff                                             |..              |
+[       OK ] ParallelCodecs/HTTPDownstreamTest/2.testWritesDraining (1 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/2.testBodySizeLimit
+[       OK ] ParallelCodecs/HTTPDownstreamTest/2.testBodySizeLimit (1 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/2.testUniformPauseState
+[       OK ] ParallelCodecs/HTTPDownstreamTest/2.testUniformPauseState (102 ms)
+[ RUN      ] ParallelCodecs/HTTPDownstreamTest/2.testMaxTxns
+[       OK ] ParallelCodecs/HTTPDownstreamTest/2.testMaxTxns (20 ms)
+[----------] 4 tests from ParallelCodecs/HTTPDownstreamTest/2 (124 ms total)
+
+[----------] 2 tests from SPDY31DownstreamTest
+[ RUN      ] SPDY31DownstreamTest.testSessionFlowControl
+[       OK ] SPDY31DownstreamTest.testSessionFlowControl (1 ms)
+[ RUN      ] SPDY31DownstreamTest.testEOFOnBlockedSession
+[       OK ] SPDY31DownstreamTest.testEOFOnBlockedSession (30 ms)
+[----------] 2 tests from SPDY31DownstreamTest (31 ms total)
+
+[----------] 3 tests from HTTP2DownstreamSessionTest
+[ RUN      ] HTTP2DownstreamSessionTest.zero_delta_window_update
+E1124 16:53:08.771392 18831 HTTP2Codec.cpp:1081] Connection error with ingress=
+00000000  82 86 84 41 89 f1 e3 c2  f2 9c eb 90 f4 ff 00 00  |...A............|
+00000010  04 08 00 00 00 00 01 00  00 00 00                 |...........     |
+[       OK ] HTTP2DownstreamSessionTest.zero_delta_window_update (1 ms)
+[ RUN      ] HTTP2DownstreamSessionTest.padding_flow_control
+[       OK ] HTTP2DownstreamSessionTest.padding_flow_control (111 ms)
+[ RUN      ] HTTP2DownstreamSessionTest.server_push
+E1124 16:53:09.084224 18831 HTTP2Codec.cpp:1081] Connection error with ingress=
+00000000  00 00 00 02 42 80 86 44  8f 9d 29 ad 17 18 63 c7  |....B..D..)...c.|
+00000010  8f 0b ca 73 ae 43 d2 c7  41 89 f1 e3 c2 f2 9c eb  |...s.C..A.......|
+00000020  90 f4 ff 00 00 06 01 24  00 00 00 02 00 00 00 00  |.......$........|
+00000030  10                                                |.               |
+E1124 16:53:09.084419 18831 HTTP2Codec.cpp:1081] Connection error with ingress=
+00000000  00 00 06 01 24 00 00 00  02 00 00 00 00 10 88 00  |....$...........|
+00000010  00 64 00 00 00 00 00 01                           |.d......        |
+[       OK ] HTTP2DownstreamSessionTest.server_push (201 ms)
+[----------] 3 tests from HTTP2DownstreamSessionTest (314 ms total)
+
+[----------] 1 test from HTTPSessionAcceptorTestNPNJunk
+[ RUN      ] HTTPSessionAcceptorTestNPNJunk.npn
+
+GMOCK WARNING:
+Uninteresting mock function call - returning default value.
+    Function call: getFd()
+          Returns: 0
+Stack trace:
+[       OK ] HTTPSessionAcceptorTestNPNJunk.npn (13 ms)
+[----------] 1 test from HTTPSessionAcceptorTestNPNJunk (13 ms total)
+
+[----------] 5 tests from SPDY3UpstreamSessionTest
+[ RUN      ] SPDY3UpstreamSessionTest.server_push
+[       OK ] SPDY3UpstreamSessionTest.server_push (1 ms)
+[ RUN      ] SPDY3UpstreamSessionTest.ingress_goaway_abort_uncreated_streams
+[       OK ] SPDY3UpstreamSessionTest.ingress_goaway_abort_uncreated_streams (1 ms)
+[ RUN      ] SPDY3UpstreamSessionTest.ingress_goaway_session_error
+[       OK ] SPDY3UpstreamSessionTest.ingress_goaway_session_error (1 ms)
+[ RUN      ] SPDY3UpstreamSessionTest.test_under_limit_on_write_error
+[       OK ] SPDY3UpstreamSessionTest.test_under_limit_on_write_error (0 ms)
+[ RUN      ] SPDY3UpstreamSessionTest.test_overlimit_resume
+[       OK ] SPDY3UpstreamSessionTest.test_overlimit_resume (2 ms)
+[----------] 5 tests from SPDY3UpstreamSessionTest (5 ms total)
+
+[----------] 10 tests from HTTPUpstreamSessionTest
+[ RUN      ] HTTPUpstreamSessionTest.basic_request
+[       OK ] HTTPUpstreamSessionTest.basic_request (0 ms)
+[ RUN      ] HTTPUpstreamSessionTest.two_requests
+[       OK ] HTTPUpstreamSessionTest.two_requests (1 ms)
+[ RUN      ] HTTPUpstreamSessionTest.10_requests
+[       OK ] HTTPUpstreamSessionTest.10_requests (1 ms)
+[ RUN      ] HTTPUpstreamSessionTest.http10_keepalive
+[       OK ] HTTPUpstreamSessionTest.http10_keepalive (1 ms)
+[ RUN      ] HTTPUpstreamSessionTest.basic_trailers
+[       OK ] HTTPUpstreamSessionTest.basic_trailers (0 ms)
+[ RUN      ] HTTPUpstreamSessionTest.two_requests_with_pause
+[       OK ] HTTPUpstreamSessionTest.two_requests_with_pause (0 ms)
+[ RUN      ] HTTPUpstreamSessionTest.set_transaction_timeout
+[       OK ] HTTPUpstreamSessionTest.set_transaction_timeout (1 ms)
+[ RUN      ] HTTPUpstreamSessionTest.100_continue_keepalive
+[       OK ] HTTPUpstreamSessionTest.100_continue_keepalive (0 ms)
+[ RUN      ] HTTPUpstreamSessionTest.417_keepalive
+[       OK ] HTTPUpstreamSessionTest.417_keepalive (0 ms)
+[ RUN      ] HTTPUpstreamSessionTest.101_upgrade
+[       OK ] HTTPUpstreamSessionTest.101_upgrade (1 ms)
+[----------] 10 tests from HTTPUpstreamSessionTest (5 ms total)
+
+[----------] 1 test from HTTPUpstreamTimeoutTest
+[ RUN      ] HTTPUpstreamTimeoutTest.write_timeout_after_response
+[       OK ] HTTPUpstreamTimeoutTest.write_timeout_after_response (509 ms)
+[----------] 1 test from HTTPUpstreamTimeoutTest (509 ms total)
+
+[----------] 2 tests from NoFlushUpstreamSessionTest
+[ RUN      ] NoFlushUpstreamSessionTest.session_paused_start_paused
+[       OK ] NoFlushUpstreamSessionTest.session_paused_start_paused (1 ms)
+[ RUN      ] NoFlushUpstreamSessionTest.delete_txn_on_unpause
+[       OK ] NoFlushUpstreamSessionTest.delete_txn_on_unpause (1 ms)
+[----------] 2 tests from NoFlushUpstreamSessionTest (3 ms total)
+
+[----------] 7 tests from MockHTTP2UpstreamTest
+[ RUN      ] MockHTTP2UpstreamTest.parse_error_no_txn
+[       OK ] MockHTTP2UpstreamTest.parse_error_no_txn (0 ms)
+[ RUN      ] MockHTTP2UpstreamTest.receive_double_goaway
+[       OK ] MockHTTP2UpstreamTest.receive_double_goaway (0 ms)
+[ RUN      ] MockHTTP2UpstreamTest.server_push_invalid_assoc
+[       OK ] MockHTTP2UpstreamTest.server_push_invalid_assoc (1 ms)
+[ RUN      ] MockHTTP2UpstreamTest.server_push_after_fin
+[       OK ] MockHTTP2UpstreamTest.server_push_after_fin (0 ms)
+[ RUN      ] MockHTTP2UpstreamTest.server_push_handler_install_fail
+[       OK ] MockHTTP2UpstreamTest.server_push_handler_install_fail (1 ms)
+[ RUN      ] MockHTTP2UpstreamTest.server_push_unhandled_assoc
+[       OK ] MockHTTP2UpstreamTest.server_push_unhandled_assoc (1 ms)
+[ RUN      ] MockHTTP2UpstreamTest.delay_upstream_window_update
+[       OK ] MockHTTP2UpstreamTest.delay_upstream_window_update (1 ms)
+[----------] 7 tests from MockHTTP2UpstreamTest (4 ms total)
+
+[----------] 11 tests from MockHTTPUpstreamTest
+[ RUN      ] MockHTTPUpstreamTest.0_max_outgoing_txns
+[       OK ] MockHTTPUpstreamTest.0_max_outgoing_txns (0 ms)
+[ RUN      ] MockHTTPUpstreamTest.outgoing_txn_settings
+[       OK ] MockHTTPUpstreamTest.outgoing_txn_settings (1 ms)
+[ RUN      ] MockHTTPUpstreamTest.ingress_goaway_drain
+[       OK ] MockHTTPUpstreamTest.ingress_goaway_drain (1 ms)
+[ RUN      ] MockHTTPUpstreamTest.goaway
+[       OK ] MockHTTPUpstreamTest.goaway (3 ms)
+[ RUN      ] MockHTTPUpstreamTest.goaway_pre_headers
+[       OK ] MockHTTPUpstreamTest.goaway_pre_headers (1 ms)
+[ RUN      ] MockHTTPUpstreamTest.no_window_update_on_drain
+[       OK ] MockHTTPUpstreamTest.no_window_update_on_drain (52 ms)
+[ RUN      ] MockHTTPUpstreamTest.get_with_body
+[       OK ] MockHTTPUpstreamTest.get_with_body (0 ms)
+[ RUN      ] MockHTTPUpstreamTest.abort_upgrade
+[       OK ] MockHTTPUpstreamTest.abort_upgrade (1 ms)
+[ RUN      ] MockHTTPUpstreamTest.drain_before_send_headers
+[       OK ] MockHTTPUpstreamTest.drain_before_send_headers (1 ms)
+[ RUN      ] MockHTTPUpstreamTest.headers_then_body_then_headers
+E1124 16:53:09.683478 18831 StateMachine.h:32] Invalid transition tried: RegularBodyReceived onHeaders
+[       OK ] MockHTTPUpstreamTest.headers_then_body_then_headers (0 ms)
+[ RUN      ] MockHTTPUpstreamTest.force_shutdown_in_set_transaction
+[       OK ] MockHTTPUpstreamTest.force_shutdown_in_set_transaction (1 ms)
+[----------] 11 tests from MockHTTPUpstreamTest (61 ms total)
+
+[----------] 1 test from TestAbortPost1
+[ RUN      ] TestAbortPost1.test
+[       OK ] TestAbortPost1.test (0 ms)
+[----------] 1 test from TestAbortPost1 (0 ms total)
+
+[----------] 1 test from TestAbortPost2
+[ RUN      ] TestAbortPost2.test
+[       OK ] TestAbortPost2.test (1 ms)
+[----------] 1 test from TestAbortPost2 (1 ms total)
+
+[----------] 1 test from TestAbortPost3
+[ RUN      ] TestAbortPost3.test
+[       OK ] TestAbortPost3.test (0 ms)
+[----------] 1 test from TestAbortPost3 (0 ms total)
+
+[----------] 1 test from TestAbortPost4
+[ RUN      ] TestAbortPost4.test
+[       OK ] TestAbortPost4.test (1 ms)
+[----------] 1 test from TestAbortPost4 (1 ms total)
+
+[----------] 1 test from TestAbortPost5
+[ RUN      ] TestAbortPost5.test
+[       OK ] TestAbortPost5.test (0 ms)
+[----------] 1 test from TestAbortPost5 (0 ms total)
+
+[----------] 1 test from AllTypesPrefix/HTTPUpstreamTest/0, where TypeParam = HTTP1xCodecPair
+[ RUN      ] AllTypesPrefix/HTTPUpstreamTest/0.immediate_eof
+[       OK ] AllTypesPrefix/HTTPUpstreamTest/0.immediate_eof (0 ms)
+[----------] 1 test from AllTypesPrefix/HTTPUpstreamTest/0 (0 ms total)
+
+[----------] 1 test from AllTypesPrefix/HTTPUpstreamTest/1, where TypeParam = SPDY3CodecPair
+[ RUN      ] AllTypesPrefix/HTTPUpstreamTest/1.immediate_eof
+[       OK ] AllTypesPrefix/HTTPUpstreamTest/1.immediate_eof (0 ms)
+[----------] 1 test from AllTypesPrefix/HTTPUpstreamTest/1 (0 ms total)
+
+[----------] 17 tests from QueueTest
+[ RUN      ] QueueTest.Basic
+[       OK ] QueueTest.Basic (0 ms)
+[ RUN      ] QueueTest.RemoveLeaf
+[       OK ] QueueTest.RemoveLeaf (0 ms)
+[ RUN      ] QueueTest.RemoveParent
+[       OK ] QueueTest.RemoveParent (0 ms)
+[ RUN      ] QueueTest.UpdateWeight
+[       OK ] QueueTest.UpdateWeight (0 ms)
+[ RUN      ] QueueTest.UpdateWeightExcl
+[       OK ] QueueTest.UpdateWeightExcl (0 ms)
+[ RUN      ] QueueTest.UpdateParentSibling
+[       OK ] QueueTest.UpdateParentSibling (0 ms)
+[ RUN      ] QueueTest.UpdateParentSiblingExcl
+[       OK ] QueueTest.UpdateParentSiblingExcl (0 ms)
+[ RUN      ] QueueTest.UpdateParentAncestor
+[       OK ] QueueTest.UpdateParentAncestor (0 ms)
+[ RUN      ] QueueTest.UpdateParentAncestorExcl
+[       OK ] QueueTest.UpdateParentAncestorExcl (0 ms)
+[ RUN      ] QueueTest.UpdateParentDescendant
+[       OK ] QueueTest.UpdateParentDescendant (0 ms)
+[ RUN      ] QueueTest.UpdateParentDescendantExcl
+[       OK ] QueueTest.UpdateParentDescendantExcl (0 ms)
+[ RUN      ] QueueTest.ExclusiveAdd
+[       OK ] QueueTest.ExclusiveAdd (0 ms)
+[ RUN      ] QueueTest.AddUnknown
+[       OK ] QueueTest.AddUnknown (0 ms)
+[ RUN      ] QueueTest.AddMax
+[       OK ] QueueTest.AddMax (0 ms)
+[ RUN      ] QueueTest.Misc
+[       OK ] QueueTest.Misc (0 ms)
+[ RUN      ] QueueTest.iterateBFS
+[       OK ] QueueTest.iterateBFS (0 ms)
+[ RUN      ] QueueTest.nextEgress
+[       OK ] QueueTest.nextEgress (0 ms)
+[----------] 17 tests from QueueTest (0 ms total)
+
+[----------] 26 tests from MockCodecDownstreamTest
+[ RUN      ] MockCodecDownstreamTest.on_abort_then_timeouts
+[       OK ] MockCodecDownstreamTest.on_abort_then_timeouts (1 ms)
+[ RUN      ] MockCodecDownstreamTest.server_push
+[       OK ] MockCodecDownstreamTest.server_push (0 ms)
+[ RUN      ] MockCodecDownstreamTest.server_push_after_goaway
+[       OK ] MockCodecDownstreamTest.server_push_after_goaway (1 ms)
+[ RUN      ] MockCodecDownstreamTest.server_push_abort
+[       OK ] MockCodecDownstreamTest.server_push_abort (1 ms)
+[ RUN      ] MockCodecDownstreamTest.server_push_abort_assoc
+[       OK ] MockCodecDownstreamTest.server_push_abort_assoc (1 ms)
+[ RUN      ] MockCodecDownstreamTest.server_push_client_message
+[       OK ] MockCodecDownstreamTest.server_push_client_message (0 ms)
+[ RUN      ] MockCodecDownstreamTest.read_timeout
+[       OK ] MockCodecDownstreamTest.read_timeout (1 ms)
+[ RUN      ] MockCodecDownstreamTest.ping
+[       OK ] MockCodecDownstreamTest.ping (1 ms)
+[ RUN      ] MockCodecDownstreamTest.flow_control_abort
+[       OK ] MockCodecDownstreamTest.flow_control_abort (1 ms)
+[ RUN      ] MockCodecDownstreamTest.buffering
+[       OK ] MockCodecDownstreamTest.buffering (51 ms)
+[ RUN      ] MockCodecDownstreamTest.spdy_window
+[       OK ] MockCodecDownstreamTest.spdy_window (22 ms)
+[ RUN      ] MockCodecDownstreamTest.double_resume
+[       OK ] MockCodecDownstreamTest.double_resume (52 ms)
+[ RUN      ] MockCodecDownstreamTest.conn_flow_control_blocked
+[       OK ] MockCodecDownstreamTest.conn_flow_control_blocked (2 ms)
+[ RUN      ] MockCodecDownstreamTest.conn_flow_control_timeout
+[       OK ] MockCodecDownstreamTest.conn_flow_control_timeout (502 ms)
+[ RUN      ] MockCodecDownstreamTest.unpaused_large_post
+[       OK ] MockCodecDownstreamTest.unpaused_large_post (7 ms)
+[ RUN      ] MockCodecDownstreamTest.ingress_paused_window_update
+[       OK ] MockCodecDownstreamTest.ingress_paused_window_update (4 ms)
+[ RUN      ] MockCodecDownstreamTest.shutdown_then_send_push_headers
+[       OK ] MockCodecDownstreamTest.shutdown_then_send_push_headers (1 ms)
+[ RUN      ] MockCodecDownstreamTest.read_iobuf_chain_shutdown
+[       OK ] MockCodecDownstreamTest.read_iobuf_chain_shutdown (0 ms)
+[ RUN      ] MockCodecDownstreamTest.send_double_goaway_timeout
+[       OK ] MockCodecDownstreamTest.send_double_goaway_timeout (1 ms)
+[ RUN      ] MockCodecDownstreamTest.send_double_goaway_idle
+[       OK ] MockCodecDownstreamTest.send_double_goaway_idle (0 ms)
+[ RUN      ] MockCodecDownstreamTest.send_goaway_timeout
+[       OK ] MockCodecDownstreamTest.send_goaway_timeout (1 ms)
+[ RUN      ] MockCodecDownstreamTest.send_goaway_idle
+[       OK ] MockCodecDownstreamTest.send_goaway_idle (0 ms)
+[ RUN      ] MockCodecDownstreamTest.drop_connection
+[       OK ] MockCodecDownstreamTest.drop_connection (0 ms)
+[ RUN      ] MockCodecDownstreamTest.drop_connection_nogoaway
+[       OK ] MockCodecDownstreamTest.drop_connection_nogoaway (1 ms)
+[ RUN      ] MockCodecDownstreamTest.shutdown_then_error
+[       OK ] MockCodecDownstreamTest.shutdown_then_error (0 ms)
+[ RUN      ] MockCodecDownstreamTest.ping_during_shutdown
+[       OK ] MockCodecDownstreamTest.ping_during_shutdown (1 ms)
+[----------] 26 tests from MockCodecDownstreamTest (654 ms total)
+
+[----------] 6 tests from NPNPositive/HTTPSessionAcceptorTestNPN
+[ RUN      ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/0
+[       OK ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/0 (1 ms)
+[ RUN      ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/1
+[       OK ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/1 (1 ms)
+[ RUN      ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/2
+[       OK ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/2 (1 ms)
+[ RUN      ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/3
+[       OK ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/3 (1 ms)
+[ RUN      ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/4
+[       OK ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/4 (1 ms)
+[ RUN      ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/5
+[       OK ] NPNPositive/HTTPSessionAcceptorTestNPN.npn/5 (1 ms)
+[----------] 6 tests from NPNPositive/HTTPSessionAcceptorTestNPN (7 ms total)
+
+[----------] 2 tests from NPNPlaintext/HTTPSessionAcceptorTestNPNPlaintext
+[ RUN      ] NPNPlaintext/HTTPSessionAcceptorTestNPNPlaintext.plaintext_protocols/0
+[       OK ] NPNPlaintext/HTTPSessionAcceptorTestNPNPlaintext.plaintext_protocols/0 (0 ms)
+[ RUN      ] NPNPlaintext/HTTPSessionAcceptorTestNPNPlaintext.plaintext_protocols/1
+[       OK ] NPNPlaintext/HTTPSessionAcceptorTestNPNPlaintext.plaintext_protocols/1 (1 ms)
+[----------] 2 tests from NPNPlaintext/HTTPSessionAcceptorTestNPNPlaintext (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 167 tests from 29 test cases ran. (6952 ms total)
+[  PASSED  ] 167 tests.

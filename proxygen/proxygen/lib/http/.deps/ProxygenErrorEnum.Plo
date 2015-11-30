@@ -1,0 +1,6 @@
+ProxygenErrorEnum.lo: ProxygenErrorEnum.cpp /usr/include/stdc-predef.h \
+ ../../../proxygen/lib/http/ProxygenErrorEnum.h
+
+/usr/include/stdc-predef.h:
+
+../../../proxygen/lib/http/ProxygenErrorEnum.h:

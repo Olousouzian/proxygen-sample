@@ -1,0 +1,4 @@
+futures/InlineExecutor.lo: futures/InlineExecutor.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

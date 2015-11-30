@@ -1,0 +1,90 @@
+[==========] Running 34 tests from 5 test cases.
+[----------] Global test environment set-up.
+[----------] 17 tests from HTTPMessage
+[ RUN      ] HTTPMessage.TestParseCookiesSimple
+[       OK ] HTTPMessage.TestParseCookiesSimple (0 ms)
+[ RUN      ] HTTPMessage.TestParseCookiesSpaces
+[       OK ] HTTPMessage.TestParseCookiesSpaces (0 ms)
+[ RUN      ] HTTPMessage.TestParseCookiesSingleCookie
+[       OK ] HTTPMessage.TestParseCookiesSingleCookie (0 ms)
+[ RUN      ] HTTPMessage.TestParseCookiesMultipleCookies
+[       OK ] HTTPMessage.TestParseCookiesMultipleCookies (0 ms)
+[ RUN      ] HTTPMessage.TestParseQueryParamsSimple
+[       OK ] HTTPMessage.TestParseQueryParamsSimple (0 ms)
+[ RUN      ] HTTPMessage.TestParseQueryParamsComplex
+[       OK ] HTTPMessage.TestParseQueryParamsComplex (13 ms)
+[ RUN      ] HTTPMessage.TestHeaderPreservation
+[       OK ] HTTPMessage.TestHeaderPreservation (0 ms)
+[ RUN      ] HTTPMessage.TestHeaderRemove
+[       OK ] HTTPMessage.TestHeaderRemove (0 ms)
+[ RUN      ] HTTPMessage.TestSetHeader
+[       OK ] HTTPMessage.TestSetHeader (0 ms)
+[ RUN      ] HTTPMessage.TestCombine
+[       OK ] HTTPMessage.TestCombine (0 ms)
+[ RUN      ] HTTPMessage.TestProxification
+[       OK ] HTTPMessage.TestProxification (0 ms)
+[ RUN      ] HTTPMessage.TestKeepaliveCheck
+[       OK ] HTTPMessage.TestKeepaliveCheck (0 ms)
+[ RUN      ] HTTPMessage.TestHeaderStripPerHop
+[       OK ] HTTPMessage.TestHeaderStripPerHop (0 ms)
+[ RUN      ] HTTPMessage.TestEmptyName
+
+[WARNING] gmock-1.7.0/gtest/src/gtest-death-test.cc:825:: Death tests use fork(), which is unsafe particularly in a threaded context. For this test, Google Test couldn't detect the number of threads.
+[       OK ] HTTPMessage.TestEmptyName (245 ms)
+[ RUN      ] HTTPMessage.TestMethod
+[       OK ] HTTPMessage.TestMethod (0 ms)
+[ RUN      ] HTTPMessage.RemoveQueryParamTests
+[       OK ] HTTPMessage.RemoveQueryParamTests (0 ms)
+[ RUN      ] HTTPMessage.SetQueryParamTests
+[       OK ] HTTPMessage.SetQueryParamTests (0 ms)
+[----------] 17 tests from HTTPMessage (258 ms total)
+
+[----------] 1 test from getPathAndQuery
+[ RUN      ] getPathAndQuery.ParseURL
+[       OK ] getPathAndQuery.ParseURL (0 ms)
+[----------] 1 test from getPathAndQuery (0 ms total)
+
+[----------] 1 test from HTTPHeaders
+[ RUN      ] HTTPHeaders.AddStringPiece
+[       OK ] HTTPHeaders.AddStringPiece (0 ms)
+[----------] 1 test from HTTPHeaders (0 ms total)
+
+[----------] 3 tests from QvalueTest
+[ RUN      ] QvalueTest.basic
+[       OK ] QvalueTest.basic (0 ms)
+[ RUN      ] QvalueTest.extras
+[       OK ] QvalueTest.extras (0 ms)
+[ RUN      ] QvalueTest.invalids
+[       OK ] QvalueTest.invalids (0 ms)
+[----------] 3 tests from QvalueTest (0 ms total)
+
+[----------] 12 tests from WindowTest
+[ RUN      ] WindowTest.basic
+[       OK ] WindowTest.basic (0 ms)
+[ RUN      ] WindowTest.change_capacity
+[       OK ] WindowTest.change_capacity (0 ms)
+[ RUN      ] WindowTest.exceed_window
+[       OK ] WindowTest.exceed_window (0 ms)
+[ RUN      ] WindowTest.overflow
+[       OK ] WindowTest.overflow (0 ms)
+[ RUN      ] WindowTest.underflow
+[       OK ] WindowTest.underflow (0 ms)
+[ RUN      ] WindowTest.huge_reserve
+[       OK ] WindowTest.huge_reserve (0 ms)
+[ RUN      ] WindowTest.huge_free
+[       OK ] WindowTest.huge_free (0 ms)
+[ RUN      ] WindowTest.huge_free_2
+[       OK ] WindowTest.huge_free_2 (0 ms)
+[ RUN      ] WindowTest.bytes_outstanding
+[       OK ] WindowTest.bytes_outstanding (0 ms)
+[ RUN      ] WindowTest.bytes_outstanding_after_fail
+[       OK ] WindowTest.bytes_outstanding_after_fail (0 ms)
+[ RUN      ] WindowTest.non_strict
+[       OK ] WindowTest.non_strict (0 ms)
+[ RUN      ] WindowTest.new_capacity_overflow
+[       OK ] WindowTest.new_capacity_overflow (0 ms)
+[----------] 12 tests from WindowTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 34 tests from 5 test cases ran. (259 ms total)
+[  PASSED  ] 34 tests.

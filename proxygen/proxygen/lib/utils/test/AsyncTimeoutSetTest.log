@@ -1,0 +1,18 @@
+[==========] Running 5 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 5 tests from TimeoutTest
+[ RUN      ] TimeoutTest.FireOnce
+[       OK ] TimeoutTest.FireOnce (0 ms)
+[ RUN      ] TimeoutTest.SwitchTimeoutSet
+[       OK ] TimeoutTest.SwitchTimeoutSet (1 ms)
+[ RUN      ] TimeoutTest.CancelTimeout
+[       OK ] TimeoutTest.CancelTimeout (0 ms)
+[ RUN      ] TimeoutTest.DestroyTimeoutSet
+[       OK ] TimeoutTest.DestroyTimeoutSet (0 ms)
+[ RUN      ] TimeoutTest.AtMostEveryN
+[       OK ] TimeoutTest.AtMostEveryN (2 ms)
+[----------] 5 tests from TimeoutTest (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test case ran. (4 ms total)
+[  PASSED  ] 5 tests.

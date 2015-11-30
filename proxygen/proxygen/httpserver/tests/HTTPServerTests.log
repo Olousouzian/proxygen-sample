@@ -1,0 +1,15 @@
+[==========] Running 2 tests from 2 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from MultiBind
+[ RUN      ] MultiBind.HandlesListenFailures
+[       OK ] MultiBind.HandlesListenFailures (5 ms)
+[----------] 1 test from MultiBind (5 ms total)
+
+[----------] 1 test from SSL
+[ RUN      ] SSL.SSLTest
+[       OK ] SSL.SSLTest (18 ms)
+[----------] 1 test from SSL (18 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 2 test cases ran. (23 ms total)
+[  PASSED  ] 2 tests.

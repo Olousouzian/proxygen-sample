@@ -1,0 +1,6 @@
+HTTPConstants.lo: HTTPConstants.cpp /usr/include/stdc-predef.h \
+ ../../../proxygen/lib/http/HTTPConstants.h
+
+/usr/include/stdc-predef.h:
+
+../../../proxygen/lib/http/HTTPConstants.h:
